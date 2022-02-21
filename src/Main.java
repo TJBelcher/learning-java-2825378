@@ -5,12 +5,12 @@ public class Main {
     String choiceOne = "Eric Clapton";
     String choiceTwo = "Jimmy Page";
 	String choiceThree = "Jimi Hendrix";
-    String correctAnswer = "Jimmy Page";
+    String correctAnswer = choiceTwo;
     String artistChoice1 = " ";
     String artistChoice2 = " ";
   	String artistChoice = " ";
   	Boolean loopComplete = false;
-    do {
+  	while (!loopComplete) {
   	System.out.println(question);
     System.out.println("You may answer:  "+ choiceOne + " or " + choiceTwo + " or " + choiceThree);
 	    Scanner input = new Scanner(System.in);
@@ -18,9 +18,11 @@ public class Main {
 	    artistChoice2 = input.next();
 	    artistChoice = artistChoice1 + " " + artistChoice2;
 	    System.out.println("You answered " + artistChoice);
-		if (artistChoice.equals(choiceOne)||artistChoice.equals(choiceTwo)||artistChoice.equals(choiceThree))
+		if (artistChoice.toLowerCase().equals(choiceOne.toLowerCase())||
+				artistChoice.toLowerCase().equals(choiceTwo.toLowerCase())||
+					artistChoice.toLowerCase().equals(choiceThree.toLowerCase()))
 		{
-			if(artistChoice.equals(correctAnswer)) {
+			if(artistChoice.toLowerCase().equals(correctAnswer.toLowerCase())) {
 	           System.out.println("You are a wise person picking " + choiceTwo + "!!!");
 	           loopComplete = true;
 	        }
@@ -33,7 +35,5 @@ public class Main {
 			System.out.println("Please select one of the offered artists - try again");  	
 		}
     }
-	while (!loopComplete);
-    } 
-   
-	}
+  } 
+}
