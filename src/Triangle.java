@@ -18,4 +18,9 @@ public class Triangle {
     public double findArea() {
         return (this.base * this.height) / 2;
     }
+     
+    public static double findArea2(Triangle tri) {
+        return (tri.base * tri.height) / 2;
+    }
 }
+
